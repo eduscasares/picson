@@ -1,0 +1,12 @@
+table {
+    border-collapse: collapse;
+    border: 1px solid var(--black-32);
+}
+
+td {
+    padding: 0;
+    box-sizing: border-box;
+  &.active {
+    background: #000;
+  }
+}

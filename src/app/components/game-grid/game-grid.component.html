@@ -1,1 +1,13 @@
-<p>game-grid works!</p>
+<app-grid-tile [value]="10"></app-grid-tile>
+<app-grid-tile [value]="2"></app-grid-tile>
+<app-grid-tile [value]="1"></app-grid-tile>
+<app-grid-tile [value]="1"></app-grid-tile>
+<app-grid-tile [value]="3"></app-grid-tile>
+<table>
+    <tr *ngFor="let row of puzzleModel?.rows, let rowIndex = index">
+        <td *ngFor="let col of puzzleModel?.cols, let colIndex = index">
+            <!-- [ngClass]="{'active' : puzzleModel.imageData[puzzleModel.width * rowIndex + colIndex] === 1}" -->
+            <app-grid-tile [x]="rowIndex" [y]="colIndex"></app-grid-tile>
+        </td>
+    </tr>
+</table>

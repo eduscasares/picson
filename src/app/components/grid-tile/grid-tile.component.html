@@ -1,2 +1,3 @@
-<div class="grid-tile" (click)="handleClick()"></div>
-{{state}}
+<div class="grid-tile" [ngClass]="{'filled': state == tileStates.Filled}" (click)="handleClick()">
+    {{value}}
+</div>

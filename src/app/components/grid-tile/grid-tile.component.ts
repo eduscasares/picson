@@ -11,6 +11,10 @@ import { EventManager } from 'src/app/services/event-manager.service';
 export class GridTileComponent implements OnInit {
 
   public state: TileState = TileState.Empty;
+  public tileStates = TileState;
+
+  @Input()
+  public value?: number;
 
   @Input()
   public x: number = 0;
@@ -24,8 +28,10 @@ export class GridTileComponent implements OnInit {
   }
 
   handleClick() {
-    this.eventManager.broadcast(new EventWithContent<TileEvent>('gridTileClicked', new TileEvent(this.x, this.y)));  }
+    this.state = TileState.Filled;
+    this.eventManager.broadcast(new EventWithContent<TileEvent>('gridTileClicked', new TileEvent(this.x, this.y)));
+  }
 
 }
 
-enum TileState { Empty, Filled, Cross }
+export enum TileState { Empty, Filled, Cross }
