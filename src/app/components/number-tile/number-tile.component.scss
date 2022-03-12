@@ -10,5 +10,6 @@
     font-weight: 700;
     font-size: 14px;
 
-    background: #CCC;
+    // Corrección visual de compensación de bordes
+    transform: translate(-1px, -1px);
 }

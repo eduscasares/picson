@@ -10,6 +10,7 @@ import { GridTileComponent } from './components/grid-tile/grid-tile.component';
 import { GameGridComponent } from './components/game-grid/game-grid.component';
 import { NumberTileComponent } from './components/number-tile/number-tile.component';
 import { IconCrossComponent } from './components/icons/icon-cross/icon-cross.component';
+import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { IconCrossComponent } from './components/icons/icon-cross/icon-cross.com
     GridTileComponent,
     GameGridComponent,
     NumberTileComponent,
-    IconCrossComponent
+    IconCrossComponent,
+    SplashScreenComponent
   ],
   imports: [
     BrowserModule

@@ -11,6 +11,10 @@
   display: flex;
 }
 
+.second-row {
+  transform: translateX(-1px);
+}
+
 .miniature {
   width: 72px;
   height: 72px;
@@ -30,11 +34,16 @@ td {
   display: flex;
   align-items: flex-end;
   box-sizing: border-box;
-  border: 1px solid #000;
+  border: 1px solid var(--black-24);
+  border-bottom: 0;
 
   div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     box-sizing: border-box;
-    border: 1px solid #000;
+    border: 1px solid var(--black-24);
+    border-bottom: 0;
     width: 24px;
     height: 100%;
   }
@@ -44,10 +53,17 @@ td {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  border: 1px solid var(--black-24);
+  border-right: 0;
+
   div {
     display: flex;
     justify-content: flex-end;
     box-sizing: border-box;
+    border: 1px solid var(--black-24);
+    border-right: 0;
+
     height: 24px;
+    width: 100%;
   }
 }

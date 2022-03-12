@@ -22,8 +22,13 @@ body {
     padding: 0;
     box-sizing: border-box;
     margin: 0;
-    height: 100vh;
+}
 
+.app-root {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
