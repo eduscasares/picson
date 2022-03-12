@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { IconButtonComponent } from './components/icon-button/icon-button.component';
+import { GridCellComponent } from './components/grid-cell/grid-cell.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { IconButtonComponent } from './components/icon-button/icon-button.compon
     HeaderComponent,
     ContentComponent,
     FooterComponent,
-    IconButtonComponent
+    IconButtonComponent,
+    GridCellComponent
   ],
   imports: [
     BrowserModule
