@@ -24,31 +24,30 @@ table {
 td {
     padding: 0;
     box-sizing: border-box;
-  &.active {
-    background: #000;
-  }
 }
 
 .number-cols {
   display: flex;
   align-items: flex-end;
-  border: 1px solid black;
   box-sizing: border-box;
+  border: 1px solid #000;
 
   div {
-    border: 1px solid black;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    width: 24px;
+    height: 100%;
   }
 }
 
 .number-rows {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-}
-
-.number-rows div {
-  display: flex;
-  justify-content: flex-end;
-  border: 1px solid black;
   box-sizing: border-box;
+  div {
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    height: 24px;
+  }
 }

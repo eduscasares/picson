@@ -1,3 +1,5 @@
 <div class="grid-tile" [ngClass]="{'filled': state == tileStates.Filled}" (click)="handleClick()">
     {{value}}
+
+    <app-icon-cross fillColor="#d00" *ngIf="state == tileStates.Cross"></app-icon-cross>
 </div>

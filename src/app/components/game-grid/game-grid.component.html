@@ -9,14 +9,14 @@
             </div>
         </div>
     </div>
-    
+
     <div class="second-row">
         <div class="number-rows">
             <div *ngFor="let row of puzzleModel?.rows">
                 <app-number-tile *ngFor="let value of row" [value]="value"></app-number-tile>
             </div>
         </div>
-        
+
         <table>
             <tr *ngFor="let row of puzzleModel?.rows, let rowIndex = index">
                 <td *ngFor="let col of puzzleModel?.cols, let colIndex = index">
@@ -26,5 +26,5 @@
             </tr>
         </table>
     </div>
-  
+
 </div>

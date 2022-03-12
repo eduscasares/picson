@@ -9,6 +9,7 @@ import { IconButtonComponent } from './components/icon-button/icon-button.compon
 import { GridTileComponent } from './components/grid-tile/grid-tile.component';
 import { GameGridComponent } from './components/game-grid/game-grid.component';
 import { NumberTileComponent } from './components/number-tile/number-tile.component';
+import { IconCrossComponent } from './components/icons/icon-cross/icon-cross.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NumberTileComponent } from './components/number-tile/number-tile.compon
     IconButtonComponent,
     GridTileComponent,
     GameGridComponent,
-    NumberTileComponent
+    NumberTileComponent,
+    IconCrossComponent
   ],
   imports: [
     BrowserModule

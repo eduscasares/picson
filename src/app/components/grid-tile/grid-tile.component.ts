@@ -28,7 +28,7 @@ export class GridTileComponent implements OnInit {
   }
 
   handleClick() {
-    this.state = TileState.Filled;
+    this.state = TileState.Cross;
     this.eventManager.broadcast(new EventWithContent<TileEvent>('gridTileClicked', new TileEvent(this.x, this.y)));
   }
 
