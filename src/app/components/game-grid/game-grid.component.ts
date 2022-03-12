@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TileEvent } from 'src/app/events/tile.event';
 import { PuzzleModel } from 'src/app/models/puzzle.model';
 import { EventManager } from 'src/app/services/event-manager.service';
-import { JsonParserService } from 'src/app/services/json-parser.service';
+import { TileState } from '../grid-tile/grid-tile.component';
 
 @Component({
   selector: 'app-game-grid',
@@ -12,18 +12,27 @@ import { JsonParserService } from 'src/app/services/json-parser.service';
 })
 export class GameGridComponent implements OnInit {
 
-  public puzzleModel: PuzzleModel = this.jsonParser.getPuzzleData();
-  public eventSubscription: Subscription[] = [];
+  @Input()
+  public puzzleModel!: PuzzleModel;
 
+  private eventSubscription: Subscription[] = [];
+  private game: TileState[] = [];
 
-  constructor(public jsonParser: JsonParserService,
-    public eventManager: EventManager) { }
+  constructor(private eventManager: EventManager) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
-    this.eventSubscription.push(this.eventManager.subscribe('gridTileClicked', (position: TileEvent) => {
+    this.game = [this.puzzleModel.imageData.length];
+
+    this.eventSubscription.push(this.eventManager.subscribe('changeGridTileState', (tileEvent: TileEvent) => {
+
+      this.game[this.puzzleModel.width * tileEvent.positionY + tileEvent.positionY] = tileEvent.fromState;
 
     }));
+  }
+
+  checkGame() {
+
   }
 
 }

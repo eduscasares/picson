@@ -22,16 +22,19 @@ export class IconButtonComponent implements OnInit {
   ngOnInit(): void {
     this.buttonState = this.mode == 'edit';
 
-    this.eventSubscription.push( this.eventManager.subscribe('gameButtonClicked', (mode: string) => {
-      if(mode !== this.mode) {
+    if (this.buttonState)
+      this.eventManager.broadcast(new EventWithContent<string>('gameButtonClicked', this.mode));
+
+    this.eventSubscription.push(this.eventManager.subscribe('gameButtonClicked', (mode: string) => {
+      if (mode !== this.mode) {
         this.buttonState = false;
-      } 
+      }
     }));
   }
 
   handleClick() {
 
-    if(!this.buttonState) {
+    if (!this.buttonState) {
       this.buttonState = true;
 
       this.eventManager.broadcast(new EventWithContent<string>('gameButtonClicked', this.mode));

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { TileEvent } from 'src/app/events/tile.event';
 import { EventWithContent } from 'src/app/models/event-with-content.model';
 import { EventManager } from 'src/app/services/event-manager.service';
@@ -13,6 +14,8 @@ export class GridTileComponent implements OnInit {
   public state: TileState = TileState.Empty;
   public tileStates = TileState;
 
+  private eventSubscription: Subscription[] = [];
+
   @Input()
   public value?: number;
 
@@ -25,11 +28,19 @@ export class GridTileComponent implements OnInit {
   constructor(protected eventManager: EventManager) { }
 
   ngOnInit(): void {
+
+    this.eventSubscription.push(this.eventManager.subscribe('changeGridTileState', (tileEvent: TileEvent) => {
+
+      if (this.x == tileEvent.positionX && this.y == tileEvent.positionY) {
+        this.state = tileEvent.fromState;
+      }
+
+    }));
+
   }
 
   handleClick() {
-    this.state = TileState.Cross;
-    this.eventManager.broadcast(new EventWithContent<TileEvent>('gridTileClicked', new TileEvent(this.x, this.y)));
+    this.eventManager.broadcast(new EventWithContent<TileEvent>('gridTileClicked', new TileEvent(this.state, this.x, this.y)));
   }
 
 }

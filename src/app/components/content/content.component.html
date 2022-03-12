@@ -1,5 +1,5 @@
 <div class="game-layout">
-    <app-game-grid></app-game-grid>
+    <app-game-grid [puzzleModel]="puzzleModel"></app-game-grid>
 </div>
 
 <div class="game-controls">
@@ -8,4 +8,4 @@
     <app-icon-button mode="cross"></app-icon-button>
 </div>
 
-Log: {{buttonClicked}}
+Log: {{selectedMode}}
