@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { TileEvent } from 'src/app/events/tile.event';
 import { EventManager } from 'src/app/services/event-manager.service';
 
 @Component({
@@ -18,6 +19,10 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
     this.eventSubscription.push(this.eventManager.subscribe('gameButtonClicked', (mode: string) => {
       this.buttonClicked = mode;
+    }));
+
+    this.eventSubscription.push(this.eventManager.subscribe('gridTileClicked', (position: TileEvent) => {
+      this.buttonClicked = `(${position.positionX}, ${position.positionY})`;
     }));
   }
 
