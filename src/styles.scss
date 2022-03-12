@@ -16,3 +16,13 @@
 * {
     font-family: 'Inter';
 }
+
+body {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}

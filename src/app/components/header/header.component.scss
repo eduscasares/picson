@@ -1,0 +1,50 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    position: relative;
+    min-height: 72px;
+}
+
+.site-branding, .level, .reset {
+    width: 33.33%;
+}
+
+.site-branding {
+    justify-content: flex-start;
+}
+
+.level {
+    justify-content: center;
+}
+
+.level h2 {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.reset {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    color: var(--black-76);
+}
+
+.reset p {
+    font-size: 20px;
+    list-style: 32px;
+    font-weight: 400;
+}
+
+.reset svg path {
+    fill: var(--black-76);
+} 
+
+@media only screen and (max-width: 768px) {
+    .reset p {
+        display: none;
+    }
+}

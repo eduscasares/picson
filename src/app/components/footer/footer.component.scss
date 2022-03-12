@@ -1,0 +1,14 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+p.footer-caption {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin: 16px 0;
+}
