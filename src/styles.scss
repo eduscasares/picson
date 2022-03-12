@@ -1,6 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(./assets/fonts/fonts.scss);
 
+:root {
+    --black-100: #040921;
+    --black-76: #686B7A;
+    --black-60: #AFB0B8;
+    --black-32: #C3C4CA;
+    --black-24: #EBEBED;
+    --white: #fff;
+    --primary: #8987FF;
+    --primary-hover: #5350E3;
+    --default-transition: 200ms cubic-bezier(0.4,0,0.4,1);
+}
+
 * {
     font-family: 'Inter';
 }
