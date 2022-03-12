@@ -32,6 +32,9 @@ export class ContentComponent implements OnInit {
       this.eventManager.broadcast(new EventWithContent<TileEvent>('changeGridTileState', event));
     }));
 
+    this.eventSubscription.push(this.eventManager.subscribe('endGame', () => {
+      this.selectedMode = 'endGame';
+    }));
 
   }
 

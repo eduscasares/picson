@@ -22,17 +22,31 @@ export class GameGridComponent implements OnInit {
 
   ngOnInit() {
 
-    this.game = [this.puzzleModel.imageData.length];
+    this.game = this.puzzleModel.imageData.map((item) => {
+      return TileState.Empty;
+    });
 
     this.eventSubscription.push(this.eventManager.subscribe('changeGridTileState', (tileEvent: TileEvent) => {
 
-      this.game[this.puzzleModel.width * tileEvent.positionY + tileEvent.positionY] = tileEvent.fromState;
+      this.game[this.puzzleModel.width * tileEvent.positionX + tileEvent.positionY] = tileEvent.fromState;
+
+      this.checkGame();
 
     }));
   }
 
   checkGame() {
+    for (let i = 0; i < this.game.length; i++) {
+      if (this.puzzleModel.imageData[i] != this.game[i]) {
 
+        if (this.puzzleModel.imageData[i] == TileState.Filled ||
+          this.game[i] == TileState.Filled) {
+          return;
+        }
+      }
+    }
+
+    this.eventManager.broadcast('endGame');
   }
 
 }
