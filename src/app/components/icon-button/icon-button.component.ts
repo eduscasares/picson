@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { EventWithContent } from 'src/app/models/event-with-content.model';
+import { EventManager } from 'src/app/services/event-manager.service';
 
 @Component({
   selector: 'app-icon-button',
@@ -7,20 +9,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class IconButtonComponent implements OnInit {
 
-  @Input() 
+  @Input()
   public mode: string = 'edit';
 
   public buttonState: boolean = false;
 
-  handleClick() {
-
-    this.buttonState = !this.buttonState;
-  
-  }
-
-  constructor() { }
+  constructor(protected eventManager: EventManager) { }
 
   ngOnInit(): void {
   }
 
+  handleClick() {
+    this.eventManager.broadcast(new EventWithContent<string>('gameButtonClicked', this.mode));
+  }
 }

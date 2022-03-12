@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { EventManager } from 'src/app/services/event-manager.service';
 
 @Component({
   selector: 'app-content',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  public eventSubscription: Subscription[] = [];
+  public buttonClicked: String = '';
+
+
+  constructor(public eventManager: EventManager) { }
 
   ngOnInit(): void {
+    this.eventSubscription.push(this.eventManager.subscribe('gameButtonClicked', (mode: string) => {
+      this.buttonClicked = mode;
+    }));
   }
 
 }
