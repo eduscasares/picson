@@ -1,3 +1,21 @@
+.game-dashboard {
+  display: flex;
+  flex-direction: column;
+  max-width: 312px;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+}
+
+.first-row, .second-row {
+  display: flex;
+}
+
+.miniature {
+  width: 72px;
+  height: 72px;
+}
+
 table {
     border-collapse: collapse;
     border: 1px solid var(--black-32);
@@ -9,4 +27,28 @@ td {
   &.active {
     background: #000;
   }
+}
+
+.number-cols {
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid black;
+  box-sizing: border-box;
+
+  div {
+    border: 1px solid black;
+  }
+}
+
+.number-rows {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+.number-rows div {
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid black;
+  box-sizing: border-box;
 }

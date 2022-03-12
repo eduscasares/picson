@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { IconButtonComponent } from './components/icon-button/icon-button.component';
 import { GridTileComponent } from './components/grid-tile/grid-tile.component';
 import { GameGridComponent } from './components/game-grid/game-grid.component';
+import { NumberTileComponent } from './components/number-tile/number-tile.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GameGridComponent } from './components/game-grid/game-grid.component';
     FooterComponent,
     IconButtonComponent,
     GridTileComponent,
-    GameGridComponent
+    GameGridComponent,
+    NumberTileComponent
   ],
   imports: [
     BrowserModule
