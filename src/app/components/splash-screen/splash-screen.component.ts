@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-splash-screen',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SplashScreenComponent implements OnInit {
 
+  @Input()
+  public visibility: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.visibility = false;
+    }, 1500);
   }
 
 }

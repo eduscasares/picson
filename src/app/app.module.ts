@@ -11,6 +11,7 @@ import { GameGridComponent } from './components/game-grid/game-grid.component';
 import { NumberTileComponent } from './components/number-tile/number-tile.component';
 import { IconCrossComponent } from './components/icons/icon-cross/icon-cross.component';
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
+import { WinScreenComponent } from './components/win-screen/win-screen.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
     GameGridComponent,
     NumberTileComponent,
     IconCrossComponent,
-    SplashScreenComponent
+    SplashScreenComponent,
+    WinScreenComponent
   ],
   imports: [
     BrowserModule
