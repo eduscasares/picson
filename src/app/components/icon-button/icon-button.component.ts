@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { EventWithContent } from 'src/app/models/event-with-content.model';
 import { EventManager } from 'src/app/services/event-manager.service';
 
@@ -14,12 +15,27 @@ export class IconButtonComponent implements OnInit {
 
   public buttonState: boolean = false;
 
+  public eventSubscription: Subscription[] = [];
+
   constructor(protected eventManager: EventManager) { }
 
   ngOnInit(): void {
+    this.buttonState = this.mode == 'edit';
+
+    this.eventSubscription.push( this.eventManager.subscribe('gameButtonClicked', (mode: string) => {
+      if(mode !== this.mode) {
+        this.buttonState = false;
+      } 
+    }));
   }
 
   handleClick() {
-    this.eventManager.broadcast(new EventWithContent<string>('gameButtonClicked', this.mode));
+
+    if(!this.buttonState) {
+      this.buttonState = true;
+
+      this.eventManager.broadcast(new EventWithContent<string>('gameButtonClicked', this.mode));
+    }
   }
+
 }
