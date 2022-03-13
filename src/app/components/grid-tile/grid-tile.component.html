@@ -5,7 +5,6 @@
         'y-border-to-top': x > 1 && x % fiveMultiple === 0,
         'y-border-to-bottom': x > 1 && x % fiveMultiple === fiveMultiple - 1,
         'y-border-to-left': y % fiveMultiple === 0}" (click)="handleClick()">
-    {{value}}
 
     <app-icon-cross fillColor="#d00" *ngIf="state == tileStates.Cross"></app-icon-cross>
 </div>
