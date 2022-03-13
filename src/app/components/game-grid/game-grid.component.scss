@@ -22,7 +22,8 @@
 
 table {
     border-collapse: collapse;
-    border: 1px solid var(--black-32);
+    border: 1px solid var(--black-76);
+    border-spacing: 0px;
 }
 
 td {
@@ -62,7 +63,6 @@ td {
     box-sizing: border-box;
     border: 1px solid var(--black-24);
     border-right: 0;
-
     height: 24px;
     width: 100%;
   }

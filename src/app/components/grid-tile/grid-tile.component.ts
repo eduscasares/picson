@@ -14,6 +14,8 @@ export class GridTileComponent implements OnInit {
   public state: TileState = TileState.Empty;
   public tileStates = TileState;
 
+  public fiveMultiple = 5;
+
   private eventSubscription: Subscription[] = [];
 
   @Input()
@@ -34,6 +36,7 @@ export class GridTileComponent implements OnInit {
       if (this.x == tileEvent.positionX && this.y == tileEvent.positionY) {
         this.state = tileEvent.fromState;
       }
+
 
     }));
 

@@ -3,24 +3,37 @@
     height: 24px;
     border: 1px solid var(--black-32);
     box-sizing: border-box;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-weight: 700;
     font-size: 14px;
     cursor: pointer;
 
     &.filled {
         background: var(--primary);
-
-        // &:hover {
-        //     background: var(--primary-hover);
-        // }
     }
 
     &:hover {
         background: var(--black-24);
     }
+}
+
+.x-border-to-left {
+    border-left: 1px solid var(--black-76);
+}
+.x-border-to-right {
+    border-right: 1px solid var(--black-76);
+}
+.x-border-to-top {
+    border-top: 1px solid var(--black-76);;
+}
+.y-border-to-top {
+    border-top: 1px solid var(--black-76);
+}
+.y-border-to-bottom {
+    border-bottom: 1px solid var(--black-76);
+}
+.y-border-to-left {
+    border-left: 1px solid var(--black-76);
 }
