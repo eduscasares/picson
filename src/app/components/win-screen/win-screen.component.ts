@@ -20,6 +20,15 @@ export class WinScreenComponent implements OnInit {
     this.eventSubscription.push(this.eventManager.subscribe('endGame', () => {
       this.visibility = true;
     }));
+
+    this.eventSubscription.push(this.eventManager.subscribe('restartGame', () => {
+      this.visibility = false;
+    }));
+
+  }
+
+  onResetClick() {
+    this.eventManager.broadcast('restartGame');
   }
 
 }

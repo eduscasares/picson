@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventManager } from 'src/app/services/event-manager.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(protected eventManager: EventManager) { }
 
   ngOnInit(): void {
   }
 
+  onResetClicked() {
+    this.eventManager.broadcast('restartGame');
+  }
 }

@@ -16,15 +16,13 @@ export class GameGridComponent implements OnInit {
   public puzzleModel!: PuzzleModel;
 
   private eventSubscription: Subscription[] = [];
-  private game: TileState[] = [];
+  public game: TileState[] = [];
 
   constructor(private eventManager: EventManager) { }
 
   ngOnInit() {
 
-    this.game = this.puzzleModel.imageData.map((item) => {
-      return TileState.Empty;
-    });
+    this.gameInit();
 
     this.eventSubscription.push(this.eventManager.subscribe('changeGridTileState', (tileEvent: TileEvent) => {
 
@@ -33,6 +31,17 @@ export class GameGridComponent implements OnInit {
       this.checkGame();
 
     }));
+
+
+    this.eventSubscription.push(this.eventManager.subscribe('restartGame', () => {
+      this.gameInit();
+    }));
+  }
+
+  gameInit() {
+    this.game = this.puzzleModel.imageData.map((item) => {
+      return TileState.Empty;
+    });
   }
 
   checkGame() {

@@ -19,9 +19,6 @@ export class GridTileComponent implements OnInit {
   private eventSubscription: Subscription[] = [];
 
   @Input()
-  public value?: number;
-
-  @Input()
   public x: number = 0;
 
   @Input()
@@ -38,6 +35,10 @@ export class GridTileComponent implements OnInit {
       }
 
 
+    }));
+
+    this.eventSubscription.push(this.eventManager.subscribe('restartGame', (tileEvent: TileEvent) => {
+      this.state = TileState.Empty;
     }));
 
   }

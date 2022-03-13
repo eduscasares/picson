@@ -1,13 +1,11 @@
-<div class="grid-tile" 
-    [ngClass]="{'filled': state == tileStates.Filled,
+<div class="grid-tile" [ngClass]="{'filled': state == tileStates.Filled,
         'x-border-to-left': y > 1 && y % fiveMultiple === 0, 
         'x-border-to-right': y > 1 && y % fiveMultiple === fiveMultiple - 1,
         'x-border-to-top': x % fiveMultiple === 0,
         'y-border-to-top': x > 1 && x % fiveMultiple === 0,
         'y-border-to-bottom': x > 1 && x % fiveMultiple === fiveMultiple - 1,
-        'y-border-to-left': y % fiveMultiple === 0}" 
-        (click)="handleClick()">
-        {{value}}
+        'y-border-to-left': y % fiveMultiple === 0}" (click)="handleClick()">
+    {{value}}
 
     <app-icon-cross fillColor="#d00" *ngIf="state == tileStates.Cross"></app-icon-cross>
 </div>

@@ -1,0 +1,7 @@
+<table>
+    <tr *ngFor="let row of [].constructor(height), let rowIndex = index">
+        <td *ngFor="let col of [].constructor(width), let colIndex = index"
+            [ngClass]="{'active' : game[width * rowIndex + colIndex] === 1}">
+        </td>
+    </tr>
+</table>

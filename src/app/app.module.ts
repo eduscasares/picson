@@ -12,6 +12,7 @@ import { NumberTileComponent } from './components/number-tile/number-tile.compon
 import { IconCrossComponent } from './components/icons/icon-cross/icon-cross.component';
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 import { WinScreenComponent } from './components/win-screen/win-screen.component';
+import { MinimapComponent } from './components/minimap/minimap.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { WinScreenComponent } from './components/win-screen/win-screen.component
     NumberTileComponent,
     IconCrossComponent,
     SplashScreenComponent,
-    WinScreenComponent
+    WinScreenComponent,
+    MinimapComponent
   ],
   imports: [
     BrowserModule

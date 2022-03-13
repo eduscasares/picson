@@ -1,7 +1,10 @@
 <div class="game-dashboard">
 
     <div class="first-row">
-        <div class="miniature"></div>
+        <div class="miniature">
+            <app-minimap [height]="puzzleModel.height" [width]="puzzleModel.width" [game]="game"></app-minimap>
+
+        </div>
 
         <div class="number-cols">
             <div *ngFor="let col of puzzleModel?.cols">
