@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { EventManager } from 'src/app/services/event-manager.service';
 
 @Component({
   selector: 'app-win-screen',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WinScreenComponent implements OnInit {
 
-  constructor() { }
+  public eventSubscription: Subscription[] = [];
+
+  @Input()
+  public visibility: boolean = false;
+
+  constructor(protected eventManager: EventManager) { }
 
   ngOnInit(): void {
+    this.eventSubscription.push(this.eventManager.subscribe('endGame', () => {
+      this.visibility = true;
+    }));
   }
 
 }

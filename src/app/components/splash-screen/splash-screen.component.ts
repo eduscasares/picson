@@ -9,6 +9,7 @@ export class SplashScreenComponent implements OnInit {
 
   @Input()
   public visibility: boolean = true;
+  
 
   constructor() { }
 
