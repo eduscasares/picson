@@ -2,3 +2,25 @@ div {
     width: 24px;
     height: 24px;
 }
+
+.cross-icon {
+    width: 24px;
+    height: 24px;
+    animation: cross-fade-in 0.2s cubic-bezier(0,0,0.4,1.4);
+    animation-fill-mode: forwards;
+}
+
+.cross-icon.out {
+    animation: cross-fade-out 0.2s cubic-bezier(0,0,0.4,1.4);
+    animation-fill-mode: forwards;
+}
+
+@keyframes cross-fade-in {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+@keyframes cross-fade-out {
+    0% { transform: scale(1); }
+    100% { transform: scale(0); }
+}

@@ -32,8 +32,8 @@ export class GridTileComponent implements OnInit {
 
       if (this.x == tileEvent.positionX && this.y == tileEvent.positionY) {
         this.state = tileEvent.fromState;
-      }
 
+      }
 
     }));
 

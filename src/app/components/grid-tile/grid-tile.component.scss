@@ -8,14 +8,22 @@
     justify-content: center;
     font-weight: 700;
     font-size: 14px;
+    position: relative;
+    transition: all 0.1s ease-in-out;
     cursor: pointer;
 
     &.filled {
         background: var(--primary);
     }
 
-    &:hover {
-        background: var(--black-24);
+    &:hover::after {
+        content: '';
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(4, 9, 33, 0.1);
     }
 }
 
