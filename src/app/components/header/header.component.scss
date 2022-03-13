@@ -32,6 +32,7 @@
     justify-content: flex-end;
     gap: 10px;
     color: var(--black-76);
+    cursor: pointer;
 }
 
 .reset p {
@@ -39,7 +40,7 @@
     list-style: 32px;
     font-weight: 400;
 } .reset svg {
-    cursor: pointer;
+    
 }
 
 .reset svg path {
