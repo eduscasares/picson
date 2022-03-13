@@ -1,6 +1,8 @@
 table {
     border-collapse: collapse;
-    border: none
+    border: 2px solid var(--black-76);
+    height: 100%;
+    width: 100%;
 }
 
 td {
@@ -10,6 +12,6 @@ td {
     box-sizing: border-box;
 
     &.active {
-        background: var(--black-100);
+        background: var(--primary);
     }
 }

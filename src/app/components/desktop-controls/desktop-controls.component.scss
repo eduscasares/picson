@@ -1,0 +1,22 @@
+.desktop-controls {
+    display: none;
+    color: var(--black-76);
+    font-size: 14px;
+    line-height: 20px;
+
+    .left-click p > span:first-child, .right-click p > span:first-child {
+        padding: 3px 10px;
+        border: 1px solid var(--black-76);
+        border-radius: 4px;
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .desktop-controls {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

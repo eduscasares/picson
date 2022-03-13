@@ -13,6 +13,7 @@ import { IconCrossComponent } from './components/icons/icon-cross/icon-cross.com
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 import { WinScreenComponent } from './components/win-screen/win-screen.component';
 import { MinimapComponent } from './components/minimap/minimap.component';
+import { DesktopControlsComponent } from './components/desktop-controls/desktop-controls.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MinimapComponent } from './components/minimap/minimap.component';
     IconCrossComponent,
     SplashScreenComponent,
     WinScreenComponent,
-    MinimapComponent
+    MinimapComponent,
+    DesktopControlsComponent
   ],
   imports: [
     BrowserModule

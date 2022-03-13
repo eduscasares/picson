@@ -7,6 +7,7 @@ import { EventManager } from 'src/app/services/event-manager.service';
 import { JsonParserService } from 'src/app/services/json-parser.service';
 import { TileState } from '../grid-tile/grid-tile.component';
 
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',

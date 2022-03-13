@@ -28,25 +28,66 @@
 
 .reset {
     display: flex;
+    justify-content: flex-end;
+}
+
+.reset-button {
+    color: var(--black-76);
+    display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 10px;
-    color: var(--black-76);
+    max-height: 48px;
+    padding: 0 16px;
     cursor: pointer;
+    transition: color var(--default-transition);
+
+    &:hover {
+        color: var(--black-100);
+
+        svg path { fill: var(--black-100); }
+    }
 }
 
 .reset p {
     font-size: 20px;
-    list-style: 32px;
+    line-height: 32px;
     font-weight: 400;
 } 
 
 .reset svg path {
     fill: var(--black-76);
+    transition: fill var(--default-transition);
 } 
 
 @media only screen and (max-width: 768px) {
     .reset p {
         display: none;
     }
+
+    .reset-button:hover {
+            color: var(--black-76);
+
+            svg path { fill: var(--black-76); }
+    }
+    
 }
+
+
+@media only screen and (min-width: 768px) {
+    
+    .level h2 {
+        font-size: 20px;
+        line-height: 28px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    .reset p {
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: 400;
+    } 
+
+}
+

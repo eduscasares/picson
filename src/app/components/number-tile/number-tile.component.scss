@@ -1,11 +1,10 @@
 .number-tile {
     width: 24px;
     height: 24px;
-
+    color: var(--black-76);
     display: flex;
     align-items: center;
     justify-content: center;
-
     line-height: 20px;
     font-weight: 700;
     font-size: 14px;
@@ -13,3 +12,7 @@
     // Corrección visual de compensación de bordes
     transform: translate(-1px, -1px);
 }
+
+.number-tile.completed {
+    color: var(--black-32);
+} 
