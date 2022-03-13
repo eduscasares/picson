@@ -9,6 +9,38 @@
         border: 1px solid var(--black-76);
         border-radius: 4px;
     }
+
+    .left-click p.painted {
+        position: relative;
+
+        &::after {
+            content:' ';
+            position: absolute;
+            top: -15%;
+            right: -23%;
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--black-32);
+            border-radius: 1px;
+            background-color: var(--primary);
+        }
+    }
+
+    .right-click p.crossed {
+        position: relative;
+
+        &::after {
+            content: url(../../../assets/images/cross.svg);
+            position: absolute;
+            top: -15%;
+            right: -23%;
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--black-32);
+            border-radius: 1px;
+            background-color: var(--white);
+        }
+    }
 }
 
 
